@@ -65,8 +65,10 @@ const CaseTable = () => {
         </Button>
       </SearchWrap>
       <DataGrid
-        rows={casesRows.data.filter((item) =>
-          item.caseId.toLowerCase().includes(searchInput.toLowerCase())
+        rows={casesRows.data.filter(
+          ({ caseId, fileName }) =>
+            caseId.toLowerCase().includes(searchInput.toLowerCase()) ||
+            fileName.toLowerCase().includes(searchInput.toLowerCase())
         )}
         columns={columns}
         pageSize={9}
