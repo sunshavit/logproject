@@ -1,22 +1,23 @@
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-import { useState } from 'react';
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import { useState } from "react";
 
-export const Modal = ({ }) => {
-    const [open, setIsOpen] = useState(false);
-    return (
-        <Button variant="outlined" onClick={handleClickOpen}>
+export const Modal = ({}) => {
+  const [open, setIsOpen] = useState(false);
+  return (
+    <>
+      <Button variant="outlined" onClick={handleClickOpen}>
         Open form dialog
       </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Subscribe</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            To subscribe to this website, please enter your email address here. We
-            will send updates occasionally.
+            To subscribe to this website, please enter your email address here.
+            We will send updates occasionally.
           </DialogContentText>
           <TextField
             autoFocus
@@ -33,5 +34,6 @@ export const Modal = ({ }) => {
           <Button onClick={handleClose}>Subscribe</Button>
         </DialogActions>
       </Dialog>
-    )
-}
+    </>
+  );
+};

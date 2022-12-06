@@ -65,7 +65,9 @@ const CaseTable = () => {
         </Button>
       </SearchWrap>
       <DataGrid
-        rows={casesRows.data}
+        rows={casesRows.data.filter((item) =>
+          item.caseId.toLowerCase().includes(searchInput.toLowerCase())
+        )}
         columns={columns}
         pageSize={9}
         rowsPerPageOptions={[9]}
