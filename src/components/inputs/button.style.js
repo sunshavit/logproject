@@ -5,12 +5,19 @@ export const Button = styled.button`
   color: white;
   border-radius: 5px;
   padding: 3px 14px;
-  width: 95px;
   height: 36px;
   outline: none;
   border: none;
   cursor: pointer;
   &:hover {
     background: #309eff;
+  }
+
+  svg {
+    margin-inline-end: 8px;
+    width: 20px;
+    display: inline-block;
+    /* position: relative; */
+    vertical-align: middle;
   }
 `;
