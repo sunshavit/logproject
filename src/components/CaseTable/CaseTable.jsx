@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../../App";
 import { DataGrid } from "@mui/x-data-grid";
 import { TableWrapper } from "./CaseTable.style";
-import { useNavigate } from "react-router-dom";
-import Box from "@mui/material/Box";
-import { AppContext } from "../../App";
+import { TextField } from "../inputs/textField.style";
 
 const columns = [
   {
@@ -47,26 +47,16 @@ const CaseTable = () => {
 
   return (
     <TableWrapper>
-      <Box
-        sx={{
-          height: 639,
-          width: "100%",
-          margin: "auto",
-          padding: "30px",
-          backgroundColor: "#1f3242",
-          borderRadius: "5px",
-        }}
-      >
-        <DataGrid
-          rows={casesRows.data}
-          columns={columns}
-          pageSize={9}
-          rowsPerPageOptions={[9]}
-          disableSelectionOnClick
-          disableColumnMenu
-          onRowClick={handleEvent}
-        />
-      </Box>
+      <TextField placeholder="search" />
+      <DataGrid
+        rows={casesRows.data}
+        columns={columns}
+        pageSize={9}
+        rowsPerPageOptions={[9]}
+        disableSelectionOnClick
+        disableColumnMenu
+        onRowClick={handleEvent}
+      />
     </TableWrapper>
   );
 };
