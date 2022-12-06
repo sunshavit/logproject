@@ -8,12 +8,9 @@ export const Button = styled.button`
   width: 95px;
   height: 36px;
   outline: none;
+  border: none;
   cursor: pointer;
   &:hover {
     background: #309eff;
-  }
-
-  &:focus {
-    background: #50b0ff;
   }
 `;
