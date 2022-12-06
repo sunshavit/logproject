@@ -11,6 +11,6 @@ body {
     padding: 40px;
 }
 
-.MuiPaper-root {
+.MuiPaper-root.MuiPaper-root {
     background: transparent;
 }

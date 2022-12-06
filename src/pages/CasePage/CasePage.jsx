@@ -47,7 +47,7 @@ export function CasePage() {
 
   if (!casesRows.data) return <h3>Loading...</h3>;
   const row = casesRows.data.find((row) => row.id === parseInt(caseId));
-  console.log(row);
+
   return (
     <div>
       <Header />
@@ -56,7 +56,7 @@ export function CasePage() {
         Back To Home
       </Button>
       <Box>
-        <h2>{row.caseName}</h2>
+        <h2>{row.caseId}</h2>
       </Box>
       <div style={{ display: "flex", gap: "40px" }}>
         <Box>
