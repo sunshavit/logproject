@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState } from "react";
 import * as Style from "./App.style";
+import CaseTable from "./CaseTable/CaseTable";
 import { Button } from "./components/inputs";
 function App() {
   return (
@@ -10,9 +11,11 @@ function App() {
           <Button>UPLOAD</Button>
         </div>
       </Style.Header>
-      <div className='YOdan'></div>
+      <div className="YOdan">
+        <CaseTable />
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
