@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../../App";
 import { DataGrid } from "@mui/x-data-grid";
-import { TableWrapper } from "./CaseTable.style";
+import { TableWrapper, SearchWrap } from "./CaseTable.style";
 import { TextField } from "../inputs/textField.style";
+import { Button } from "../inputs/button.style";
 
 const columns = [
   {
@@ -36,6 +37,7 @@ const columns = [
 ];
 
 const CaseTable = () => {
+  const [searchInput, setSearchInput] = useState("");
   const { casesRows } = useContext(AppContext);
   const navigate = useNavigate();
 
@@ -43,11 +45,25 @@ const CaseTable = () => {
     navigate(`/${params.id}`);
   };
 
+  const handleInputChange = (e) => {
+    const { value } = e.target;
+    setSearchInput(value);
+  };
+
   if (casesRows.isLoading) return <h3>Loading...</h3>;
 
   return (
     <TableWrapper>
-      <TextField placeholder="search" />
+      <SearchWrap>
+        <TextField
+          value={searchInput}
+          onChange={(e) => handleInputChange(e)}
+          placeholder="search"
+        />
+        <Button onClick={() => setSearchInput("")} variant="outline">
+          clear
+        </Button>
+      </SearchWrap>
       <DataGrid
         rows={casesRows.data}
         columns={columns}
