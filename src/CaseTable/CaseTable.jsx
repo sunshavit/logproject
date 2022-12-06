@@ -5,7 +5,7 @@ import { TableWrapper } from "./CaseTable.style";
 import Box from "@mui/material/Box";
 
 const columns = [
-  { field: "id", headerName: "ID", width: 90 },
+  { field: "id", headerName: "ID", width: 90, sortable: false },
   {
     field: "caseName",
     headerName: "Case Name",
@@ -16,7 +16,9 @@ const columns = [
   {
     field: "date",
     headerName: "Date",
-    width: 150,
+    type: "dateTime",
+    width: 250,
+    valueGetter: ({ value }) => value && new Date(value),
     align: "left",
   },
   {
@@ -30,40 +32,55 @@ const columns = [
 const rows = [
   {
     id: 1,
-    caseName: "CS1115",
-    date: "01-02-2021",
+    caseName: "SC1115",
+    date: 1652913512000,
     customer: "Bank Of Colombia",
   },
-  { id: 2, caseName: "CS1455", date: "01-11-2021", customer: "Tiger Lili" },
-  { id: 3, caseName: "CS7785", date: "01-12-2021", customer: "Mitzi" },
-  { id: 4, caseName: "CS9652", date: "14-08-2021", customer: "Amazon" },
-  { id: 5, caseName: "CS8456", date: "01-09-2021", customer: "Nit LTD" },
-  { id: 6, caseName: "CS9652", date: "19-12-2021", customer: "Sun Robotics" },
-  { id: 7, caseName: "CS5565", date: "20-07-2021", customer: "Adon Menashe" },
+  { id: 2, caseName: "SC1455", date: 1670333912000, customer: "Tiger Lili" },
+  { id: 3, caseName: "SC7785", date: 1670506712000, customer: "Mitzi" },
+  { id: 4, caseName: "SC9652", date: 1655566712000, customer: "Amazon" },
+  { id: 5, caseName: "SC8456", date: 1660837112000, customer: "Nit LTD" },
+  { id: 6, caseName: "SC9652", date: 1645223912000, customer: "Sun RobotiSC" },
+  { id: 7, caseName: "SC5565", date: 1652913512000, customer: "Adon Menashe" },
   {
     id: 8,
-    caseName: "CS2223",
-    date: "05-12-2021",
+    caseName: "SC2223",
+    date: 1652913512000,
     customer: "SuperX Software",
   },
   {
     id: 9,
-    caseName: "CS5696",
-    date: "07-06-2021",
+    caseName: "SC5696",
+    date: 1652913512000,
     customer: "Yoni Boston Hadati",
   },
 ];
 
 const CaseTable = () => {
+  const handleEvent = (params) => {
+    console.log(params);
+  };
+
   return (
     <TableWrapper>
-      <Box sx={{ height: 580, width: "100%", margin: "auto" }}>
+      <Box
+        sx={{
+          height: 640,
+          width: "100%",
+          margin: "auto",
+          padding: "30px",
+          backgroundColor: "#1f3242",
+          borderRadius: "5px",
+        }}
+      >
         <DataGrid
           rows={rows}
           columns={columns}
-          pageSize={10}
-          rowsPerPageOptions={[10]}
+          pageSize={9}
+          rowsPerPageOptions={[9]}
           disableSelectionOnClick
+          disableColumnMenu
+          onRowClick={handleEvent}
         />
       </Box>
     </TableWrapper>
