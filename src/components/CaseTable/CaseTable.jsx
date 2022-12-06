@@ -1,7 +1,7 @@
 import React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { TableWrapper } from "./CaseTable.style";
-
+import { Navigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 
 const columns = [
@@ -58,7 +58,8 @@ const rows = [
 
 const CaseTable = () => {
   const handleEvent = (params) => {
-    console.log(params);
+    console.log("/" + params.id, redirect);
+    <Navigate to={`/${params.id}`} />;
   };
 
   return (

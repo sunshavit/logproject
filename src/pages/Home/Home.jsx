@@ -1,4 +1,4 @@
-import CaseTable from "../../CaseTable/CaseTable";
+import CaseTable from "../../components/CaseTable/CaseTable";
 import { Header } from "../../components/header/Header";
 
 export function HomePage() {
