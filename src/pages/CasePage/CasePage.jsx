@@ -51,12 +51,18 @@ export function CasePage() {
   return (
     <div>
       <Header />
-      <Button variant="outline" onClick={() => navigate("/")}>
-        <ArrowBackIcon />
-        Back To Home
-      </Button>
-      <Box>
-        <h2>{row.caseId}</h2>
+      <Box
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <h2>{row.caseId}</h2>{" "}
+        <Button variant="outline" onClick={() => navigate("/")}>
+          <ArrowBackIcon />
+          Back To Home
+        </Button>
       </Box>
       <div style={{ display: "flex", gap: "40px" }}>
         <Box>
