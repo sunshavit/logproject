@@ -1,22 +1,28 @@
-import React, { useContext } from "react";
-import { DataGrid } from "@mui/x-data-grid";
-import { TableWrapper } from "./CaseTable.style";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Box from "@mui/material/Box";
 import { AppContext } from "../../App";
+import { DataGrid } from "@mui/x-data-grid";
+import { TableWrapper, SearchWrap } from "./CaseTable.style";
+import { TextField } from "../inputs/textField.style";
+import { Button } from "../inputs/button.style";
 
 const columns = [
-  { field: "id", headerName: "ID", width: 90, sortable: false },
   {
-    field: "caseName",
-    headerName: "Case Name",
+    field: "caseId",
+    headerName: "Case ID",
     width: 150,
+    sortable: false,
+  },
+  {
+    field: "fileName",
+    headerName: "File Name",
+    width: 350,
     sortable: false,
   },
 
   {
     field: "date",
-    headerName: "Date",
+    headerName: "Upload Date",
     type: "dateTime",
     width: 250,
     valueGetter: ({ value }) => value && new Date(value),
@@ -31,6 +37,7 @@ const columns = [
 ];
 
 const CaseTable = () => {
+  const [searchInput, setSearchInput] = useState("");
   const { casesRows } = useContext(AppContext);
   const navigate = useNavigate();
 
@@ -38,30 +45,36 @@ const CaseTable = () => {
     navigate(`/${params.id}`);
   };
 
-  if (casesRows.isLoading) return <h3>Loading...</h3>
+  const handleInputChange = (e) => {
+    const { value } = e.target;
+    setSearchInput(value);
+  };
+
+  if (casesRows.isLoading) return <h3>Loading...</h3>;
 
   return (
     <TableWrapper>
-      <Box
-        sx={{
-          height: 639,
-          width: "100%",
-          margin: "auto",
-          padding: "30px",
-          backgroundColor: "#1f3242",
-          borderRadius: "5px",
-        }}
-      >
-        <DataGrid
-          rows={casesRows.data}
-          columns={columns}
-          pageSize={9}
-          rowsPerPageOptions={[9]}
-          disableSelectionOnClick
-          disableColumnMenu
-          onRowClick={handleEvent}
+      <SearchWrap>
+        <TextField
+          value={searchInput}
+          onChange={(e) => handleInputChange(e)}
+          placeholder="search"
         />
-      </Box>
+        <Button onClick={() => setSearchInput("")} variant="outline">
+          clear
+        </Button>
+      </SearchWrap>
+      <DataGrid
+        rows={casesRows.data.filter((item) =>
+          item.caseId.toLowerCase().includes(searchInput.toLowerCase())
+        )}
+        columns={columns}
+        pageSize={9}
+        rowsPerPageOptions={[9]}
+        disableSelectionOnClick
+        disableColumnMenu
+        onRowClick={handleEvent}
+      />
     </TableWrapper>
   );
 };

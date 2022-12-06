@@ -1,6 +1,15 @@
 import styled from "styled-components";
 
 export const TableWrapper = styled.div`
+  width: 100%;
+  margin: auto;
+  padding: 30px;
+  background-color: #1f3242;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  height: 700px;
   .css-1e2bxag-MuiDataGrid-root {
     border: 1px solid #314b64;
   }
@@ -30,4 +39,11 @@ export const TableWrapper = styled.div`
   .css-17jjc08-MuiDataGrid-footerContainer {
     border-top: none;
   }
+`;
+
+export const SearchWrap = styled.div`
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  box-sizing: border-box;
 `;
