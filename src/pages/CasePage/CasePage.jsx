@@ -4,8 +4,9 @@ import { AppContext } from "../../App";
 import { Header } from "../../components/header/Header";
 import { Button } from "../../components/inputs/button.style";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { Box } from "./CasePage.style";
+import { Box, TitleHeadWrap, SingleTitle, TitleName } from "./CasePage.style";
 import { Chart } from "../../components/charts/Chart";
+import ButtonsRow from "../../components/ButtonsRow/ButtonsRow";
 
 const data = {
   labels: ["Red", "Blue", "Yellow"],
@@ -58,12 +59,27 @@ export function CasePage() {
           justifyContent: "space-between",
         }}
       >
-        <h2>{row.caseId}</h2>{" "}
+        <TitleHeadWrap>
+          <SingleTitle>
+            <TitleName>Case ID</TitleName>
+            <h2>{row.caseId}</h2>
+          </SingleTitle>
+          <SingleTitle>
+            <TitleName>File Name</TitleName>
+            <h2>{row.fileName}</h2>
+          </SingleTitle>
+          <SingleTitle>
+            <TitleName>Customer</TitleName>
+            <h2>{row.customer}</h2>
+          </SingleTitle>
+        </TitleHeadWrap>
+
         <Button variant="outline" onClick={() => navigate("/")}>
           <ArrowBackIcon />
           Back To Home
         </Button>
       </Box>
+      <ButtonsRow />
       <div style={{ display: "flex", gap: "40px" }}>
         <Box>
           <Chart config={config} />
