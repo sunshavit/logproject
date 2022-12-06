@@ -3,12 +3,12 @@ import { CasePage } from "./pages/CasePage/CasePage";
 import { HomePage } from "./pages/Home/Home";
 
 export const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <HomePage />,
-  },
-  {
-    path: "/:caseId",
-    element: <CasePage />,
-  },
-]);
+    {
+        path: '/',
+        element: <HomePage />
+    },
+    {
+        path: '/:caseId',
+        element: <CasePage />
+    }
+])
