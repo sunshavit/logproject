@@ -8,10 +8,12 @@ import DialogTitle from "@mui/material/DialogTitle";
 import DialogActions from "@mui/material/DialogActions";
 import { TextField } from "../inputs/textField.style";
 import { Logo } from "./logo";
+import { useLocation } from "react-router-dom";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [file, setFile] = useState(null);
+  const { pathname } = useLocation();
 
   const handleClose = () => {
     setIsOpen(false);
@@ -23,14 +25,17 @@ export const Header = () => {
     setFile(file);
   };
 
+  const isHomePage = pathname === "/";
   return (
     <Style.Header>
       <Logo />
       <div>
-        <Button onClick={handleOpen}>
-          <UploadFileIcon />
-          UPLOAD
-        </Button>
+        {isHomePage && (
+          <Button onClick={handleOpen}>
+            <UploadFileIcon />
+            UPLOAD
+          </Button>
+        )}
       </div>
       <Dialog open={isOpen} onClose={handleClose}>
         <DialogTitle style={{ background: "#1F3242", color: "#EEEEEE" }}>
