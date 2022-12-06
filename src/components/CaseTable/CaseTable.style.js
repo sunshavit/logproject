@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
 export const TableWrapper = styled.div`
+  .css-1e2bxag-MuiDataGrid-root {
+    border: 1px solid #314b64;
+  }
   .MuiDataGrid-columnHeaders {
     background-color: #314b64;
+    border-bottom: none;
     color: white;
   }
   .MuiDataGrid-cellContent {
@@ -19,5 +23,11 @@ export const TableWrapper = styled.div`
   }
   .css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root {
     color: white;
+  }
+  .MuiDataGrid-iconSeparator {
+    display: none;
+  }
+  .css-17jjc08-MuiDataGrid-footerContainer {
+    border-top: none;
   }
 `;

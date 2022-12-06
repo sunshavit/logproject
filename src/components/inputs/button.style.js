@@ -29,6 +29,8 @@ export const Button = styled.button`
   height: 36px;
   outline: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
   ${getCssByVariant}
   svg {
     margin-inline-end: 8px;

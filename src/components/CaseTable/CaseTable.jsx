@@ -66,7 +66,7 @@ const CaseTable = () => {
     <TableWrapper>
       <Box
         sx={{
-          height: 640,
+          height: 639,
           width: "100%",
           margin: "auto",
           padding: "30px",
