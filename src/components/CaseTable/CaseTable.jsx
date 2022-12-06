@@ -6,17 +6,22 @@ import Box from "@mui/material/Box";
 import { AppContext } from "../../App";
 
 const columns = [
-  { field: "id", headerName: "ID", width: 90, sortable: false },
   {
-    field: "caseName",
-    headerName: "Case Name",
+    field: "caseId",
+    headerName: "Case ID",
     width: 150,
+    sortable: false,
+  },
+  {
+    field: "fileName",
+    headerName: "File Name",
+    width: 350,
     sortable: false,
   },
 
   {
     field: "date",
-    headerName: "Date",
+    headerName: "Upload Date",
     type: "dateTime",
     width: 250,
     valueGetter: ({ value }) => value && new Date(value),
@@ -38,7 +43,7 @@ const CaseTable = () => {
     navigate(`/${params.id}`);
   };
 
-  if (casesRows.isLoading) return <h3>Loading...</h3>
+  if (casesRows.isLoading) return <h3>Loading...</h3>;
 
   return (
     <TableWrapper>
