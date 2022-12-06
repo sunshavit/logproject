@@ -1,15 +1,10 @@
-import { useState } from "react";
-import CaseTable from "./CaseTable/CaseTable";
-import { Header } from "./components/header/Header";
+import { RouterProvider } from 'react-router-dom';
+import { router } from './router';
 
+// Fetching data will be here at the top level component
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <div className="YOdan">
-        <CaseTable />
-      </div>
-    </div>
+    <RouterProvider router={router} />
   );
 }
 
