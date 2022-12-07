@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
   > div:nth-child(2) {
     border-left: 1px solid #314b64;
     padding-inline: 20px;
+    width: 600px;
   }
 `;
 
@@ -28,6 +29,7 @@ export const Label = styled.div`
 
 export const DevicesList = styled.div`
   height: 100%;
+  width: 600px;
   overflow-y: auto;
   overflow-x: hidden;
   border-top-left-radius: 10px;
@@ -51,7 +53,7 @@ export const DevicesList = styled.div`
       border-bottom: 1px solid #314b64;
       div {
         padding: 5px;
-        width: 100px;
+        width: 120px;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
