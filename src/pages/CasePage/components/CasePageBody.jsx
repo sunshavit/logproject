@@ -62,14 +62,6 @@ export function CasePageBody() {
       />
       {/* Yodan please do not remove this div. its pushing the bar to the side... */}
       <div></div>
-      <Card cardTitle={"Bar"}>
-        <Chart config={barConfig} />
-        <LegendWrapper isRow>
-          {barConfig.data.datasets[0].backgroundColor.map((color, idx) => (
-            <Legend key={idx} color={color} text={"expect"} />
-          ))}
-        </LegendWrapper>
-      </Card>
     </PageWrapper>
   );
 }
