@@ -16,6 +16,19 @@ export function CasePageBody() {
     getSummary().then((res) => setSummary({ isLoading: false, data: res }));
   }, []);
 
+  const slicedPieConfig = () => {
+    const slicedPieConfig = JSON.parse(JSON.stringify(pieConfig));
+
+    slicedPieConfig.data.labels = pieConfig.data.labels.slice(0, 5);
+
+    slicedPieConfig.data.datasets[0].data =
+      pieConfig.data.datasets[0].data.slice(0, 5);
+
+    slicedPieConfig.data.datasets[0].backgroundColor =
+      pieConfig.data.datasets[0].backgroundColor.slice(0, 5);
+    return slicedPieConfig;
+  };
+
   return (
     <PageWrapper>
       <Card cardTitle={"Summary"}>
@@ -27,12 +40,17 @@ export function CasePageBody() {
           style={{ display: "flex", justifyContent: "space-between" }}
         >
           <LegendWrapper>
-            {pieConfig.data.datasets[0].backgroundColor.map((color, idx) => (
-              <Legend color={color} text={pieConfig.data.labels[idx]} />
-            ))}
+            {slicedPieConfig().data.datasets[0].backgroundColor.map(
+              (color, idx) => (
+                <Legend
+                  color={color}
+                  text={slicedPieConfig().data.labels[idx]}
+                />
+              )
+            )}
           </LegendWrapper>
           <div>
-            <Chart config={pieConfig} />
+            <Chart config={slicedPieConfig()} />
           </div>
         </div>
       </Card>
