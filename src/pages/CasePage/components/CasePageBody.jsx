@@ -17,7 +17,7 @@ export function CasePageBody() {
             }}
           >
             {pieConfig.data.datasets[0].backgroundColor.map((color, idx) => (
-              <Legend color={color} text={data.labels[idx]} />
+              <Legend color={color} text={pieConfig.data.labels[idx]} />
             ))}
           </div>
           <div>
