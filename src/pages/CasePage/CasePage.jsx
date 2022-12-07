@@ -81,6 +81,7 @@ export function CasePage() {
           Back To Home
         </Button>
       </Box>
+      <ButtonsRow />
       <div style={{ display: "flex", gap: "40px", marginTop: "40px" }}>
         <Card cardTitle={"Expectetion"}>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -120,15 +121,6 @@ export function CasePage() {
             </div>
           </div>
         </Card>
-        <ButtonsRow />
-        <div style={{ display: "flex", gap: "40px" }}>
-          <Box>
-            <Chart config={config} />
-          </Box>
-          <Box>
-            <Chart config={config} />
-          </Box>
-        </div>
       </div>
     </div>
   );
