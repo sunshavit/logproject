@@ -1,43 +1,32 @@
-import React from 'react';
-import styled from 'styled-components';
-import theme from 'styled-theming';
-
-const dataTextColor = theme('mode', {
-  light: '#757575',
-  dark: '#EEEEEE',
-});
-
-const displayTextColor = theme('mode', {
-  light: '#858585',
-  dark: '#EEEEEE',
-});
+import React from "react";
+import styled from "styled-components";
 
 export const DateTitle = styled.div`
   color: #018ffe;
-  font-family: 'TitilliumWeb';
+
   font-weight: 400;
-  font-size: 12px;
+  font-size: 18px;
   line-height: 18px;
   user-select: none;
   transition: 300ms;
 `;
 
 export const DateText = styled.div`
-  color: ${dataTextColor};
-  font-family: 'TitilliumWeb';
-  font-size: 12px;
+  color: #eeeeee;
+
+  font-size: 18px;
   line-height: 18px;
   user-select: none;
   transition: 300ms;
 `;
 
 export const DisplayTitle = styled.div`
-  color: ${displayTextColor};
-  font-family: 'TitilliumWeb';
+  color: #eeeeee;
+
   line-height: 17px;
   user-select: none;
   font-style: normal;
-  font-size: 12px;
+  font-size: 18px;
   transition: 300ms;
 `;
 
@@ -66,7 +55,13 @@ const Svg = styled.div`
 
 export const ClockIcon = ({ debugId }) => (
   <Svg data-debug-id={debugId}>
-    <svg width="13" height="15" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="15"
+      height="17"
+      viewBox="0 0 13 13"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         fillRule="evenodd"
         clipRule="evenodd"

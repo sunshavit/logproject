@@ -1,15 +1,4 @@
-import styled from 'styled-components';
-import theme from 'styled-theming';
-
-const modalBgColor = theme('mode', {
-  light: 'rgba(255, 255, 255, 0.75)',
-  dark: 'rgba(31, 50, 66, 0.5)',
-});
-
-const titleColor = theme('mode', {
-  light: '#858585',
-  dark: '#94A5B5',
-});
+import styled from "styled-components";
 
 export const TimePickerWrap = styled.div`
   position: relative;
@@ -41,7 +30,7 @@ export const TimePickerModal = styled.div`
   height: fit-content;
   width: 309px;
   border-radius: 5px;
-  background-color: ${modalBgColor};
+  background-color: rgba(31, 50, 66, 0.5);
   box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.19);
   position: absolute;
   top: 28px;
@@ -56,11 +45,10 @@ export const TimePickerModal = styled.div`
 `;
 
 export const Title = styled.div`
-  font-family: 'TitilliumWeb';
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
   user-select: none;
-  color: ${titleColor};
+  color: #94a5b5;
 `;
