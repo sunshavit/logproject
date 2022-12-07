@@ -26,3 +26,21 @@ export const Label = styled.div`
     font-size: 18px;
   }
 `;
+
+export const DevicesList = styled.div`
+  height: 100%;
+  padding-inline: 20px;
+  table {
+    width: 100%;
+  }
+  tbody {
+    overflow: auto;
+    td div {
+      padding: 5px;
+      width: 100px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+`;
