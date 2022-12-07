@@ -13,6 +13,7 @@ import { useLocation } from "react-router-dom";
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [file, setFile] = useState(null);
+  const [caseId, setCaseSetId] = useState("");
   const { pathname } = useLocation();
 
   const handleClose = () => {
@@ -44,6 +45,7 @@ export const Header = () => {
         <DialogContent
           style={{ background: "#142230", paddingBlockStart: "20px" }}
         >
+          <div>hi</div>
           <div style={{ marginBottom: "10px", color: "white" }}>
             Choose a file to upload:
           </div>
