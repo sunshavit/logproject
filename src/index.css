@@ -15,6 +15,7 @@ body {
 
 .MuiPaper-root.MuiPaper-root {
     background: transparent;
+    max-width: none !important;
 }
 
   ::-webkit-scrollbar {
