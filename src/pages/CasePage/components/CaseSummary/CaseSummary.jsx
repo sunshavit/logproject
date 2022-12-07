@@ -74,7 +74,7 @@ export const CaseSummary = ({ data }) => {
               {devices.devices.map((device) => (
                 <tr>
                   <td>
-                    <div>{device.deviceName}</div>
+                    <div style={{ width: "200px" }}>{device.deviceName}</div>
                   </td>
                   <td>
                     <div>{device.deviceIP}</div>

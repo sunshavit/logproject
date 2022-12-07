@@ -59,6 +59,7 @@ export function CasePageBody() {
         isOpen={isPieModalOpen}
         handleClose={() => setIsPieModalOpen(false)}
       />
+      {/* Yodan please do not remove this div. its pushing the bar to the side... */}
       <div></div>
       <Card cardTitle={"Bar"}>
         <Chart config={barConfig} />

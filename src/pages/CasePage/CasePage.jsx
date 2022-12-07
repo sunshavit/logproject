@@ -24,6 +24,7 @@ export function CasePage() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          border: "1px solid #314b64",
         }}
       >
         <TitleHeadWrap>

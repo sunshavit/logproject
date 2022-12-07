@@ -8,9 +8,9 @@ export const Wrapper = styled.div`
     flex-grow: 1;
   }
   > div:nth-child(2) {
-    border-right: 1px solid #8691bd;
-    border-left: 1px solid #8691bd;
+    border-left: 1px solid #314b64;
     padding-inline: 20px;
+    width: 600px;
   }
 `;
 
@@ -29,18 +29,35 @@ export const Label = styled.div`
 
 export const DevicesList = styled.div`
   height: 100%;
-  padding-inline: 20px;
+  width: 600px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   table {
+    padding-inline: 20px;
+    border: 1px solid #314b64;
     width: 100%;
+    border-collapse: collapse;
+  }
+  thead {
+    position: sticky;
+    top: -1px;
+    background: #314b64;
+    th {
+      padding: 5px;
+    }
   }
   tbody {
-    overflow: auto;
-    td div {
-      padding: 5px;
-      width: 100px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
+    td {
+      border-bottom: 1px solid #314b64;
+      div {
+        padding: 5px;
+        width: 120px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
     }
   }
 `;
