@@ -35,7 +35,7 @@ export function CasePageBody() {
               flexDirection: "column",
             }}
           >
-            {data.datasets[0].backgroundColor.map((color) => (
+            {pieConfig.data.datasets[0].backgroundColor.map((color) => (
               <Legend color={color} text={"expect"} />
             ))}
           </div>
