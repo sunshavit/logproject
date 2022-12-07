@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
-  margin: 15px 0px;
   cursor: pointer;
   > div {
     display: inline-block;
@@ -16,6 +15,18 @@ const Container = styled.div`
   }
   .text {
     line-height: 22px;
+  }
+`;
+
+export const LegendWrapper = styled.div`
+  width: ${(props) => (props.isRow ? "initial" : "200px")};
+  display: flex;
+  flex-direction: ${(props) => (props.isRow ? "row" : "column")};
+  justify-content: center;
+  flex-wrap: wrap;
+  > div {
+    margin-inline-end: 20px;
+    margin-block: 10px;
   }
 `;
 
