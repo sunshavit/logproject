@@ -29,7 +29,11 @@ export const Header = () => {
   const isHomePage = pathname === "/";
   return (
     <Style.Header>
-      <Logo />
+      <Style.LogoWrap>
+        <Logo />
+        <Style.LogoName>Logirex</Style.LogoName>
+      </Style.LogoWrap>
+
       <div>
         {isHomePage && (
           <Button onClick={handleOpen}>

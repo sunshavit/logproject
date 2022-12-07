@@ -42,3 +42,16 @@ export const Label = styled.label`
     display: none;
   }
 `;
+
+export const LogoWrap = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
+export const LogoName = styled.div`
+  font-size: 35px;
+  color: white;
+  font-family: fantasy;
+  letter-spacing: 1px;
+`;
