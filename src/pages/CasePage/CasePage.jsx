@@ -6,6 +6,7 @@ import { Button } from "../../components/inputs/button.style";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Box, TitleHeadWrap, SingleTitle, TitleName } from "./CasePage.style";
 import ButtonsRow from "../../components/ButtonsRow/ButtonsRow";
+import { CasePageBody } from "./components/CasePageBody";
 
 export function CasePage() {
   const { casesRows } = useContext(AppContext);
@@ -46,6 +47,7 @@ export function CasePage() {
         </Button>
       </Box>
       <ButtonsRow />
+      <CasePageBody />
     </div>
   );
 }
