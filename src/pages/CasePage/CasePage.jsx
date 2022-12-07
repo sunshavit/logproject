@@ -5,43 +5,7 @@ import { Header } from "../../components/header/Header";
 import { Button } from "../../components/inputs/button.style";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Box, TitleHeadWrap, SingleTitle, TitleName } from "./CasePage.style";
-import { Chart } from "../../components/charts/Chart";
-import { Card } from "../../components/card/Card";
-import { Legend } from "../../components/charts/Legend";
 import ButtonsRow from "../../components/ButtonsRow/ButtonsRow";
-
-const data = {
-  labels: ["Red", "Blue", "Yellow"],
-  datasets: [
-    {
-      label: "My First Dataset",
-      data: [300, 50, 100],
-      backgroundColor: [
-        "rgb(255, 99, 132)",
-        "rgb(54, 162, 235)",
-        "rgb(255, 205, 86)",
-      ],
-      hoverOffset: 4,
-    },
-  ],
-};
-
-const config = {
-  type: "pie",
-  data: data,
-  options: {
-    plugins: {
-      legend: {
-        display: false,
-      },
-    },
-    elements: {
-      arc: {
-        borderWidth: 0,
-      },
-    },
-  },
-};
 
 export function CasePage() {
   const { casesRows } = useContext(AppContext);
@@ -82,46 +46,6 @@ export function CasePage() {
         </Button>
       </Box>
       <ButtonsRow />
-      <div style={{ display: "flex", gap: "40px", marginTop: "40px" }}>
-        <Card cardTitle={"Expectetion"}>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <div
-              style={{
-                width: "200px",
-                display: "flex",
-                justifyContent: "center",
-                flexDirection: "column",
-              }}
-            >
-              {data.datasets[0].backgroundColor.map((color, idx) => (
-                <Legend color={color} text={data.labels[idx]} />
-              ))}
-            </div>
-            <div>
-              <Chart config={config} />
-            </div>
-          </div>
-        </Card>
-        <Card cardTitle={"Expectetion"}>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <div
-              style={{
-                width: "200px",
-                display: "flex",
-                justifyContent: "center",
-                flexDirection: "column",
-              }}
-            >
-              {data.datasets[0].backgroundColor.map((color) => (
-                <Legend color={color} text={"expect"} />
-              ))}
-            </div>
-            <div>
-              <Chart config={config} />
-            </div>
-          </div>
-        </Card>
-      </div>
     </div>
   );
 }
