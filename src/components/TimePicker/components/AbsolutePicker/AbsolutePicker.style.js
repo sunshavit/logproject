@@ -1,45 +1,4 @@
-import styled from 'styled-components';
-import theme from 'styled-theming';
-
-const calenderBgColor = theme('mode', {
-  light: 'white',
-  dark: 'rgba(31, 50, 66, 1)',
-});
-
-const arrowColor = theme('mode', {
-  light: 'rgba(133, 133, 133, 0.6)',
-  dark: '#EEEEEE',
-});
-
-const dayColor = theme('mode', {
-  light: '#5d5f61',
-  dark: '#EEEEEE',
-});
-
-const disabledDayColor = theme('mode', {
-  light: '#9a9c9d',
-  dark: '#49667F',
-});
-
-const weekDayColor = theme('mode', {
-  light: '#999999',
-  dark: '#94A5B5',
-});
-
-const monthTitleColor = theme('mode', {
-  light: '#5d5f61',
-  dark: ' #EEEEEE',
-});
-
-const monthHoverBg = theme('mode', {
-  light: 'rgba(0, 0, 0, 0.03)',
-  dark: 'rgba(59, 90, 120, 0.75)',
-});
-
-const calenderTitle = theme('mode', {
-  light: '#3C4144',
-  dark: '#94A5B5',
-});
+import styled from "styled-components";
 
 export const InputsContainer = styled.div`
   display: flex;
@@ -55,7 +14,7 @@ export const InputWrapper = styled.div`
 export const CalenderModal = styled.div`
   .rdtPicker th.rdtSwitch {
     &:hover {
-      background-color: ${monthHoverBg};
+      background-color: rgba(59, 90, 120, 0.75);
       border-radius: 5px;
     }
   }
@@ -64,7 +23,7 @@ export const CalenderModal = styled.div`
   box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.19);
   border-radius: 5px;
   position: absolute;
-  background-color: ${calenderBgColor};
+  background-color: rgba(31, 50, 66, 1);
   width: 286px;
   top: 55px;
   left: ${({ modalOffset }) => `calc(50% - ${modalOffset}px)`};
@@ -74,13 +33,12 @@ export const CalenderModal = styled.div`
     border-spacing: 0px 6px;
   }
   .rdtPicker {
-    font-family: 'TitilliumWeb';
     padding: 0;
     width: 100%;
     border: none;
     border-bottom: none;
     background-color: transparent;
-    color: ${monthTitleColor};
+    color: #eeeeee;
 
     th {
       border-bottom: none !important;
@@ -89,7 +47,6 @@ export const CalenderModal = styled.div`
   //** month title  */
 
   .rdtSwitch {
-    font-family: 'TitilliumWeb';
     font-size: 14px;
     line-height: 20px;
     color: #5d5f61;
@@ -113,7 +70,7 @@ export const CalenderModal = styled.div`
 
   .rdtNext,
   .rdtPrev {
-    color: ${arrowColor};
+    color: #eeeeee;
     span {
       font-size: 20px;
     }
@@ -130,12 +87,11 @@ export const CalenderModal = styled.div`
   }
 
   .dow {
-    font-family: 'TitilliumWeb';
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-    color: ${weekDayColor};
+    color: #94a5b5;
   }
   .rdtMonth,
   .rdtYear {
@@ -148,13 +104,12 @@ export const CalenderModal = styled.div`
   .rdtDay,
   .rdtMonth,
   .rdtYear {
-    font-family: 'TitilliumWeb';
     user-select: none;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-    color: ${dayColor};
+    color: #eeeeee;
     border-radius: 5px !important;
     outline: 0px solid transparent;
     transition: 200ms;
@@ -170,7 +125,6 @@ export const CalenderModal = styled.div`
       }
     }
     &.rdtActive {
-      font-family: 'TitilliumWeb';
       color: #018ffe;
       background-color: rgba(1, 143, 254, 0.1);
       font-weight: 700;
@@ -187,8 +141,7 @@ export const CalenderModal = styled.div`
       }
     }
     &.rdtDisabled {
-      font-family: 'TitilliumWeb';
-      color: ${disabledDayColor};
+      color: #49667f;
       font-weight: 400;
       &:hover {
         outline: none;
@@ -196,7 +149,7 @@ export const CalenderModal = styled.div`
     }
   }
   .rdtOld {
-    color: ${disabledDayColor} !important;
+    color: #49667f !important;
     font-weight: 400;
   }
   .rdtTimeToggle {
@@ -212,11 +165,10 @@ export const CalenderWrap = styled.div`
 `;
 
 export const CalenderTitle = styled.div`
-  font-family: 'TitilliumWeb';
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
   user-select: none;
-  color: ${calenderTitle};
+  color: #94a5b5;
 `;

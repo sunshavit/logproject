@@ -1,39 +1,23 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
-import theme from 'styled-theming';
-import { textColor } from '../../../../../../theme/theme';
-
-const addTimeColor = theme('mode', {
-  light: '#3C4144',
-  dark: '#EEEEEE',
-});
-
-const colonColor = theme('mode', {
-  light: '#5d5f61',
-  dark: '#EEEEEE',
-});
-
-const clockInputBg = theme('mode', {
-  light: 'rgba(245, 245, 245, 0.75)',
-  dark: 'rgba(59, 90, 120, 0.75)',
-});
-
-const clockInputText = theme('mode', {
-  light: '#3C4144',
-  dark: '#EEEEEE',
-});
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 export const ButtonText = styled.div`
   font-style: normal;
-  font-family: 'TitilliumWeb';
+
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
-  color: ${addTimeColor};
+  color: #eeeeee;
 `;
 
 export const PlusIcon = () => (
-  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    width="12"
+    height="12"
+    viewBox="0 0 12 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -57,8 +41,8 @@ export const AddButton = styled.div`
 
   svg {
     path {
-      stroke: ${addTimeColor};
-      fill: ${addTimeColor};
+      stroke: #eeeeee;
+      fill: #eeeeee;
     }
   }
 
@@ -83,20 +67,20 @@ export const Clock = styled.div`
 
 export const Colon = styled.div`
   font-weight: 400;
-  font-family: 'TitilliumWeb';
+
   font-size: 15px;
   line-height: 20px;
-  color: ${colonColor};
+  color: #eeeeee;
 `;
 
 export const ClockInput = styled.input`
   width: 32px;
   height: 32px;
   line-height: 32px;
-  font-family: 'TitilliumWeb';
+
   text-align: center;
-  background-color: ${clockInputBg};
-  color: ${clockInputText};
+  background-color: rgba(59, 90, 120, 0.75);
+  color: #eeeeee;
   border-radius: 5px;
   border: none;
   -moz-appearance: textfield;
@@ -118,11 +102,11 @@ export const ClockInput = styled.input`
 `;
 
 export const AddTimeContainer = styled.div`
-  height: ${({ withClock }) => (withClock ? '44px' : '33px')};
+  height: ${({ withClock }) => (withClock ? "44px" : "33px")};
   transition: height 200ms ease;
   display: flex;
   align-items: flex-start;
-  margin-top: ${({ withClock }) => (withClock ? '5px' : '3px')};
+  margin-top: ${({ withClock }) => (withClock ? "5px" : "3px")};
 `;
 
 const fadeIn = keyframes`
@@ -146,9 +130,9 @@ export const RemoveTime = styled.div`
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
-  font-family: 'TitilliumWeb';
+
   line-height: 18px;
-  color: ${textColor};
+  color: #eeeeee;
   text-decoration: underline;
   cursor: pointer;
   user-select: none;

@@ -1,5 +1,4 @@
-import styled, { css } from 'styled-components';
-import { textColor } from '../../../../../../theme/theme';
+import styled, { css } from "styled-components";
 
 export const FooterContainer = styled.div`
   display: flex;
@@ -9,11 +8,11 @@ export const FooterContainer = styled.div`
 
 const saveButton = css`
   padding: 3px 12px;
-  background-color: ${({ isValid }) => (isValid ? '#018FFE' : '#CFD8DC')};
-  color: ${({ isValid }) => (isValid ? 'white' : '#78909C')};
-  cursor: ${({ isValid }) => (isValid ? 'pointer' : 'not-allowed')};
+  background-color: ${({ isValid }) => (isValid ? "#018FFE" : "#CFD8DC")};
+  color: ${({ isValid }) => (isValid ? "white" : "#78909C")};
+  cursor: ${({ isValid }) => (isValid ? "pointer" : "not-allowed")};
   &:hover {
-    background-color: ${({ isValid }) => (isValid ? '#309EFF' : '#CFD8DC')};
+    background-color: ${({ isValid }) => (isValid ? "#309EFF" : "#CFD8DC")};
   }
   &:active {
     background-color: #0c6fdd;
@@ -23,7 +22,7 @@ const saveButton = css`
 const cancelButton = css`
   padding: 3px 12px 3px 0px;
   background-color: transparent;
-  color: ${textColor};
+  color: #eeeeee;
   &:hover {
     color: #018ffe;
   }
@@ -32,13 +31,13 @@ const cancelButton = css`
   }
 `;
 
-const getColor = ({ type }) => (type === 'save' ? saveButton : cancelButton);
+const getColor = ({ type }) => (type === "save" ? saveButton : cancelButton);
 
 export const FooterButton = styled.button`
   transition: 200ms;
   height: 26px;
   border: none;
-  font-family: 'TitilliumWeb';
+
   border-radius: 3px;
   transition: 500ms;
   cursor: pointer;
