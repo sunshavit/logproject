@@ -43,6 +43,7 @@ export function CasePageBody() {
             {slicedPieConfig().data.datasets[0].backgroundColor.map(
               (color, idx) => (
                 <Legend
+                  key={idx}
                   color={color}
                   text={slicedPieConfig().data.labels[idx]}
                 />
@@ -64,8 +65,8 @@ export function CasePageBody() {
       <Card cardTitle={"Bar"}>
         <Chart config={barConfig} />
         <LegendWrapper isRow>
-          {barConfig.data.datasets[0].backgroundColor.map((color) => (
-            <Legend color={color} text={"expect"} />
+          {barConfig.data.datasets[0].backgroundColor.map((color, idx) => (
+            <Legend key={idx} color={color} text={"expect"} />
           ))}
         </LegendWrapper>
       </Card>

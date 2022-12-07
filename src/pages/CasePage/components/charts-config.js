@@ -2,26 +2,20 @@ export const pieConfig = {
   type: "pie",
   data: {
     labels: [
-      "Service One",
-      "Service Two",
-      "Service Three",
-      "Service Four",
-      "Service Five",
-      "Service Six",
-      "Service Seven",
-      "Service Eight",
+      "kvision-vrm",
+      "kvision-formatter",
+      "kvision-rt-alert",
+      "kvision-collector",
+      "kvision-reporter",
     ],
     datasets: [
       {
         label: "My First Dataset",
-        data: [300, 50, 100, 331, 39, 50, 304, 54, 6, 7],
+        data: [300, 50, 100, 331, 39],
         backgroundColor: [
           "rgb(255, 99, 132)",
           "rgb(255, 159, 64)",
           "rgb(255, 205, 86)",
-          "rgb(75, 192, 192)",
-          "rgb(255, 159, 64)",
-          "rgb(255, 99, 132)",
           "rgb(75, 192, 192)",
           "rgb(54, 162, 235)",
         ],

@@ -5,7 +5,14 @@ import ErrorIcon from "@mui/icons-material/Error";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 export const CaseSummary = ({ data }) => {
-  const { date, version, upgrades, devices, is_data_migrated } = data;
+  const {
+    date,
+    version,
+    upgrades,
+    devices,
+    is_data_migrated,
+    migrated_from_cVision,
+  } = data;
 
   const upgradeValues =
     upgrades.length === 0
@@ -22,7 +29,7 @@ export const CaseSummary = ({ data }) => {
                   marginInlineEnd: "5px",
                 }}
               />
-              {from}{" "}
+              {from}
               <ArrowForwardIcon
                 style={{
                   position: "relative",
@@ -56,7 +63,7 @@ export const CaseSummary = ({ data }) => {
         <Label title="Number Of DPs" value={devices.number_of_dps} />
         <Label
           title="Migrated from CVision"
-          value={is_data_migrated ? "TRUE" : "FALSE"}
+          value={migrated_from_cVision ? "TRUE" : "FALSE"}
         />
       </div>
       <div>

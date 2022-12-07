@@ -28,7 +28,11 @@ const PieModal = ({ isOpen, handleClose, pieConfig }) => {
         >
           <LegendWrapper>
             {pieConfig.data.datasets[0].backgroundColor.map((color, idx) => (
-              <Legend color={color} text={pieConfig.data.labels[idx]} />
+              <Legend
+                key={idx}
+                color={color}
+                text={pieConfig.data.labels[idx]}
+              />
             ))}
           </LegendWrapper>
           <div>
