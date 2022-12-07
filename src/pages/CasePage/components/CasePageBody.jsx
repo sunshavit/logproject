@@ -41,6 +41,7 @@ export function CasePageBody() {
         isOpen={isPieModalOpen}
         handleClose={() => setIsPieModalOpen(false)}
       />
+      <div></div>
       <Card cardTitle={"Bar"}>
         <Chart config={barConfig} />
         <LegendWrapper isRow>
