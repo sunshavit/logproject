@@ -45,8 +45,16 @@ export const Header = () => {
         <DialogContent
           style={{ background: "#142230", paddingBlockStart: "20px" }}
         >
-          <div>hi</div>
           <div style={{ marginBottom: "10px", color: "white" }}>
+            Enter Case ID:
+          </div>
+          <TextField
+            onChange={(e) => setCaseSetId(e.target.value)}
+            value={caseId}
+          />
+          <div
+            style={{ marginTop: "10px", marginBottom: "10px", color: "white" }}
+          >
             Choose a file to upload:
           </div>
           <Style.Label isFileSelected={file?.name}>
